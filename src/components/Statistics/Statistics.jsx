@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './Statistic.module.css';
+import s from './Statistics.module.css';
 
 const Statistics = ({ good, neutral, bad, total, persantageFeedback }) => {
   return (
@@ -21,9 +21,9 @@ const Statistics = ({ good, neutral, bad, total, persantageFeedback }) => {
         <p className={s.itemName}>Total:</p>
         <span className={s.count}>{total()}</span>
       </li>
-      <li className={s.list}>
-        <p className={s.itemLikes}>Positive:</p>
-        <span className={s.data}>{persantageFeedback()} %</span>
+      <li className={s.item}>
+        <p className={s.itemName}>Positive:</p>
+        <span className={s.count}>{persantageFeedback()} %</span>
       </li>
     </ul>
   );
