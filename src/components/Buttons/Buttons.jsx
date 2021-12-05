@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Buttons.css';
 
-const Buttons = ({ feedbackName, onIncreamentFbAmount }) => {
+const Buttons = ({ onIncrementFeetback, feedbackName }) => {
   return (
     <>
       <button
         type="button"
-        onClick={() => onIncreamentFbAmount(feedbackName)}
+        onClick={() => onIncrementFeetback(feedbackName)}
         className={s.button}
-      ></button>
+      >
+        {feedbackName}
+      </button>
     </>
   );
 };
-export default Buttons;
+
 Buttons.propTypes = {
   feedbackName: PropTypes.string.isRequired,
-  onIncreamentFbAmount: PropTypes.func.isRequired,
+  onIncrementFeetback: PropTypes.func.isRequired,
 };
+
+export default Buttons;

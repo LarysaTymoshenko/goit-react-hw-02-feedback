@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions.jsx';
-import './App.css';
+import Section from '../Sections/Sections.jsx';
+import Statistics from '../Statistics/Statistics.jsx';
+// import './App.css';
 
-export default class App extends Component() {
+export default class App extends Component {
   state = {
     good: 0,
     neutral: 0,
@@ -27,15 +29,27 @@ export default class App extends Component() {
   };
 
   render() {
-    // const { good, neutral, bad } = this.state;
-    // const total = this.countTotalFeedback() > 0;
+    const { good, neutral, bad } = this.state;
+    // const sum = this.countTotalFeedback() > 0;
 
     return (
-      <div className="App">
-        <FeedbackOptions
-          options={['good', ' neutral', 'bad']}
-        ></FeedbackOptions>
-      </div>
+      <>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={Object.entries(this.state)}
+            onIncrementFeetback={this.addFeedback}
+          />
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback}
+            persantageFeedback={this.countPositiveFeedbackPercentage}
+          ></Statistics>
+        </Section>
+      </>
     );
   }
 }
