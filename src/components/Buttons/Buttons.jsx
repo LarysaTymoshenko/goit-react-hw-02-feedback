@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Buttons.css';
 
-const Buttons = ({ onIncrementFeetback, feedbackName }) => {
+const Buttons = ({ onIncrementFeedback, feedbackName }) => {
   return (
     <>
       <button
         type="button"
-        onClick={() => onIncrementFeetback(feedbackName)}
+        onClick={() => onIncrementFeedback(feedbackName)}
         className={s.button}
       >
         {feedbackName}
@@ -18,7 +18,7 @@ const Buttons = ({ onIncrementFeetback, feedbackName }) => {
 
 Buttons.propTypes = {
   feedbackName: PropTypes.string.isRequired,
-  onIncrementFeetback: PropTypes.func.isRequired,
+  onIncrementFeedback: PropTypes.func.isRequired,
 };
 
 export default Buttons;
