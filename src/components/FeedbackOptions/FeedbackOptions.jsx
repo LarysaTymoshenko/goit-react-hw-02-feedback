@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Buttons from '../Buttons/Buttons.jsx';
 import s from './Feedback.module.css';
 
-export default function FeedbackOptions({ options, onIncrementFeetback }) {
+export default function FeedbackOptions({ options, onIncrementFeedback }) {
   return (
     <ul className={s.list}>
       {options.map(([key]) => (
         <li key={key} className={s.item}>
           <Buttons
             feedbackName={key}
-            onIncrementFeetback={onIncrementFeetback}
+            onIncrementFeedback={onIncrementFeedback}
           />
         </li>
       ))}
@@ -20,5 +20,5 @@ export default function FeedbackOptions({ options, onIncrementFeetback }) {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.array).isRequired,
-  onIncrementFeetback: PropTypes.func.isRequired,
+  onIncrementFeedback: PropTypes.func.isRequired,
 };

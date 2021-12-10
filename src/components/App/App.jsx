@@ -37,7 +37,7 @@ export default class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.entries(this.state)}
-            onIncrementFeetback={this.addFeedback}
+            onIncrementFeedback={this.addFeedback}
           />
         </Section>
         <Section title="Statistics">
