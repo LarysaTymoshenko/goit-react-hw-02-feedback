@@ -6,4 +6,8 @@ button {
   width: 200px;
   padding: 5px;
   margin: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: rgb(126, 89, 89);
 }
